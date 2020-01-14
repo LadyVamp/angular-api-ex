@@ -1,0 +1,33 @@
+<h1>Пример работы с github REST API</h1>
+<p>
+	<a href="https://developer.github.com/v3/" target="_blank">Документация</a>
+</p>
+Введите имя пользователя github: 
+<input type="text" [(ngModel)]="userName">
+<button (click)="search()">Search</button>
+<div *ngIf="responce">
+	<img src="{{responce.avatar_url}}">
+	<p>
+		Имя: {{responce.name}}
+	</p>
+	<p>
+		Репозитории: {{responce.public_repos}}
+	</p>
+	<p>
+		Биография: {{responce.bio}}
+	</p>
+	<p>
+		Местонахождение: {{responce.location}}
+	</p>
+	<p>
+		Компания: {{responce.company}}
+	</p>
+	<p>
+		Профиль: <a href="{{responce.html_url}}" target="_blank">{{responce.html_url}}</a>
+	</p>
+	<p>
+		Все данные: <a href="{{responce.url}}" target="_blank">{{responce.url}}</a>
+	</p>
+
+
+</div>
